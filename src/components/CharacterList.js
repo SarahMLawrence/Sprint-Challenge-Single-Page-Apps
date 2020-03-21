@@ -23,7 +23,7 @@ export default function CharacterList() {
   return (
  
     <div className="character-list">
-<SearchForm />
+      <SearchForm />
       {character.map(char => {
         return (
           <CharacterCard

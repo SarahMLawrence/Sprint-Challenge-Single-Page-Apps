@@ -8,19 +8,19 @@ export default function SearchForm() {
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    Axios.get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
-      .then(res => {
-        console.log(res.data.results)
-        const characters = res.data.results.filter(char =>
-          char.name.toLowerCase().includes(search.toLowerCase())
-        );
-        setResults(characters);
-      })
-      .catch(err => {
-        console.log('No data', err);
-      })
-  }, [search]);
+  // useEffect(() => {
+  //   Axios.get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
+  //     .then(res => {
+  //       console.log(res.data.results)
+  //       const characters = res.data.results.filter(char =>
+  //         char.name.toLowerCase().includes(search.toLowerCase())
+  //       );
+  //       setResults(characters);
+  //     })
+  //     .catch(err => {
+  //       console.log('No data', err);
+  //     })
+  // }, [search]);
 
 
   const handleChange = e => {

@@ -27,7 +27,7 @@ export default function WelcomePage() {
       </nav>
       <Route exact path="/" component={WelcomePage} />
       <Route exact path="/character-list" component={CharacterList} />
-      <Route exact path="/location-list" component={LocationsList} />
+     {/*} <Route exact path="/location-list" component={LocationsList} />*/}
       <header>
         <h1>Welcome to the ultimate fan site!</h1>
         <img

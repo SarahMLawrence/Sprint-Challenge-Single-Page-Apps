@@ -9,7 +9,7 @@ export default function SearchForm() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    Axios.get('https://rickandmortyapi.com/api/character/')
+    Axios.get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
       .then(res => {
         console.log(res.data.results)
         const characters = res.data.results.filter(char =>

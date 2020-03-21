@@ -2,7 +2,7 @@ import React from "react";
 
 
 import CharacterList from './CharacterList';
-import LocationsList from './LocationsList';
+//import LocationsList from './LocationsList';
 
 import {
   BrowserRouter as Router,
@@ -22,7 +22,7 @@ export default function WelcomePage() {
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/character-list">Characters</Link>
-          <Link to="/locations-list">Locations</Link>
+          {/*<Link to="/locations-list">Locations</Link>*/}
         </div>
       </nav>
       <Route exact path="/" component={WelcomePage} />

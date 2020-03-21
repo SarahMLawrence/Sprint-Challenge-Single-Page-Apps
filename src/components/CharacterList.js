@@ -2,28 +2,28 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 import CharacterCard from './CharacterCard';
-import SearchForm from "./SearchForm";
+//import SearchForm from "./SearchForm";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [character, setCharacter] = useState([]);
 
-  useEffect(() => {
-    Axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
-      .then(response => {
-        const newChar = response.data.results;
-        console.log(newChar);
-        setCharacter(newChar);
-      })
-      .catch(error => console.log(`The error is: ${error}`));
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, []);
+  // useEffect(() => {
+  //   Axios.get(`https://rickandmortyapi.com/api/character/`)
+  //     .then(response => {
+  //       const newChar = response.data.results;
+  //       console.log(newChar);
+  //       setCharacter(newChar);
+  //     })
+  //     .catch(error => console.log(`The error is: ${error}`));
+  //   // TODO: Add API Request here - must run in `useEffect`
+  //   //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+  // }, []);
 
   return (
  
     <div className="character-list">
-      <SearchForm />
+     {/*<SearchForm />*/}
       {character.map(char => {
         return (
           <CharacterCard

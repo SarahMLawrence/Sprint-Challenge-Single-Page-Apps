@@ -5,14 +5,14 @@ import CharacterCard from './CharacterCard';
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
-  const [char, setChar] = useState([]);
+  const [character, setCharacter] = useState([]);
 
   useEffect(() => {
-    Axios.get(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`)
+    Axios.get(`https://rickandmortyapi.com/api/character/`)
       .then(response => {
-        const newChar = reponse.data.result;
+        const newChar = response.data.results;
         console.log(newChar);
-        setChar(newChar);
+        setCharacter(newChar);
       })
       .catch(error => console.log(`The error is: ${error}`));
     // TODO: Add API Request here - must run in `useEffect`
@@ -20,22 +20,22 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-      {char.map(character => {
+    <div className="character-list">
+
+      {character.map(char => {
         return (
           <CharacterCard
-          key={character.id}
-          name={character.name}
-          status={character.status}
-          species={character.species}
-          type={character.type}
-          gender={character.gender}
+          key={char.id}
+          name={char.name}
+          status={char.status}
+          species={char.species}
+          type={char.type}
+          gender={char.gender}
 
           />
         );
       })}
 
-    </section>
+    </div>
   );
-}
+};
